@@ -1,0 +1,36 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "",
+    "dev": "npx tsx --watch ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GibsonCS/task-manager.git"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "keywords": [],
+  "author": "Gibson Cruz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GibsonCS/task-manager/issues"
+  },
+  "homepage": "https://github.com/GibsonCS/task-manager#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "zod": "^3.25.42"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.29",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
