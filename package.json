@@ -7,10 +7,18 @@
   "scripts": {
     "dev": "node --watch src/index.ts",
     "debug": "node --inspect src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": " npx jest --runInBand --watch",
+    "test:cov": "npx jest --config ./jest.config.mjs --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.14.0"
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "@jest/globals": "^30.0.5",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "ts-jest": "^29.4.1",
+    "typescript": "^5.9.2"
+  }
 }

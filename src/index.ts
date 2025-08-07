@@ -1,6 +1,3 @@
-function test() {
-  console.log("teste");
-  const s = 1;
+export default function example() {
+  return "1";
 }
-
-test();
