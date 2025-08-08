@@ -1,7 +1,7 @@
 import { describe, expect, test } from "@jest/globals";
 import CreateUser from "../src/core/use-cases/createUser";
 import type { UserDTO } from "../src/dtos/userDTO";
-import UserRepositoryPostgres from "../src/infrastructure/repository/userRepositoryPostgres";
+import UserRepositoryPostgres from "../src/infra/repository/userRepositoryPostgres";
 
 describe("createUser", () => {
 	test("should throw a InvalidUser with 'username must be five or more characters' message", async () => {

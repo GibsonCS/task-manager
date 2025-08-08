@@ -1,7 +1,7 @@
 import { describe, expect, test } from "@jest/globals";
 import CreateTask from "../src/core/use-cases/createTask";
 import type { TaskDTO } from "../src/dtos/taskDTO";
-import TaskRepositoryPostgres from "../src/infrastructure/repository/taskRepositoryPostgres";
+import TaskRepositoryPostgres from "../src/infra/repository/taskRepositoryPostgres";
 
 describe("createTask", () => {
 	test("Should return '{message: insert a valid date, success: false}' if the startDate is invalid ", async () => {
