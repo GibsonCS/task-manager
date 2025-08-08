@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "node --watch src/index.ts",
     "debug": "node --inspect src/index.ts",
-    "test": " npx jest --runInBand --watch",
-    "test:cov": "npx jest --config ./jest.config.mjs --coverage"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "keywords": [],
   "author": "",
