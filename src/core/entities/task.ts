@@ -1,5 +1,5 @@
 import InvalidTask from "../../errs/invalidTask";
-import type { TaskDTO } from "../use-cases/create-task/taskDTO";
+import type { TaskDTO } from "../../dtos/taskDTO";
 
 export default class Task {
   private _name: string;

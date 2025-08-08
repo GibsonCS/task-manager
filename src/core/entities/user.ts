@@ -1,5 +1,5 @@
 import InvalidUser from "../../errs/invalidUser";
-import type { UserDTO } from "../use-cases/create-user/userDTO";
+import type { UserDTO } from "../../dtos/userDTO";
 
 export default class User {
   private _name: string;

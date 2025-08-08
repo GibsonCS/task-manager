@@ -1,7 +1,7 @@
-import InvalidUser from "../../../errs/invalidUser";
-import User from "../../entities/user";
-import type { UserRepository } from "../../repositories/userRepository";
-import type { UserDTO } from "./userDTO";
+import InvalidUser from "../../errs/invalidUser";
+import User from "../entities/user";
+import type { UserRepository } from "../repositories/userRepository";
+import type { UserDTO } from "../../dtos/userDTO";
 
 export default class CreateUser {
   private userRepository;

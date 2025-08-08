@@ -1,6 +1,6 @@
 import type User from "../../core/entities/user";
 import type { UserRepository } from "../../core/repositories/userRepository";
-import type { UserDTO } from "../../core/use-cases/create-user/userDTO";
+import type { UserDTO } from "../../dtos/userDTO";
 
 const users: UserDTO[] = [];
 export default class UserRepositoryPostgres implements UserRepository {

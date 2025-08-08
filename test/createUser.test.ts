@@ -1,7 +1,7 @@
 import { describe, test, expect } from "@jest/globals";
 import UserRepositoryPostgres from "../src/infrastructure/repository/userRepositoryPostgres";
-import CreateUser from "../src/core/use-cases/create-user/createUser";
-import type { UserDTO } from "../src/core/use-cases/create-user/userDTO";
+import CreateUser from "../src/core/use-cases/createUser";
+import type { UserDTO } from "../src/dtos/userDTO";
 import InvalidUser from "../src/errs/invalidUser";
 
 describe("createUser", () => {

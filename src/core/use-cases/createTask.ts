@@ -1,7 +1,7 @@
-import InvalidTask from "../../../errs/invalidTask";
-import Task from "../../entities/task";
-import type { TaskRepository } from "../../repositories/taskRepository";
-import type { TaskDTO } from "./taskDTO";
+import InvalidTask from "../../errs/invalidTask";
+import Task from "../entities/task";
+import type { TaskRepository } from "../repositories/taskRepository";
+import type { TaskDTO } from "../../dtos/taskDTO";
 
 export default class CreateTask {
   private taskRepository: TaskRepository;

@@ -1,6 +1,6 @@
 import Task from "../../core/entities/task";
 import type { TaskRepository } from "../../core/repositories/taskRepository";
-import type { TaskDTO } from "../../core/use-cases/create-task/taskDTO";
+import type { TaskDTO } from "../../dtos/taskDTO";
 
 export default class TaskRepositoryPostgres implements TaskRepository {
   private tasks: any;
