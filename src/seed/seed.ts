@@ -1,4 +1,4 @@
-import { postgres } from "../db/postgres.js";
+import { postgres } from "../db/postgres.ts";
 
 export default async function seed() {
 	try {

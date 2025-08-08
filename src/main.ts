@@ -1,3 +1,3 @@
-import seed from "./seed/seed.js";
+import seed from "./seed/seed.ts";
 
 await seed();
