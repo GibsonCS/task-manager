@@ -1,3 +1,4 @@
+import InvalidTask from "../../../errs/invalidTask";
 import Task from "../../entities/task";
 import type { TaskRepository } from "../../repositories/taskRepository";
 import type { TaskDTO } from "./taskDTO";
@@ -10,8 +11,20 @@ export default class CreateTask {
   }
 
   async execute(task: TaskDTO) {
-    const newTask = Task.create(task);
-    if (newTask) await this.taskRepository.save(task);
-    return null;
+    try {
+      const { name, startDate, endTime } = Task.create(task);
+
+      const taskDTO: TaskDTO = {
+        name,
+        startDate,
+        endTime,
+      };
+
+      return await this.taskRepository.save(taskDTO);
+    } catch (error) {
+      if (error instanceof InvalidTask) {
+        return { success: false, message: error.message };
+      }
+    }
   }
 }
