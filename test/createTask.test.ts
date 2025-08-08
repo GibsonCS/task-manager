@@ -9,8 +9,8 @@ describe("createTask", () => {
 
     const input: TaskDTO = {
       name: "Ler libro",
-      startDate: new Date(),
-      endTime: new Date(),
+      startDate: new Date("2025-08-08T00:42:58.972Z"),
+      endTime: new Date("2025-08-08T00:41:58.972Z"),
     };
 
     const output = { message: "insert a valid date", success: false };
@@ -19,4 +19,22 @@ describe("createTask", () => {
 
     expect(result).toStrictEqual(output);
   });
+
+  test("should return '{message: insert a valid name, success: false}' created task", async () => {
+    const createTask = new CreateTask(new TaskRepositoryPostgres());
+
+    const input: TaskDTO = {
+      name: "Le",
+      startDate: new Date(),
+      endTime: new Date(),
+    };
+
+    const output = { message: "insert a valid name", success: false };
+
+    const result = await createTask.execute(input);
+
+    expect(result).toStrictEqual(output);
+  });
+
+  test.todo("should return a created task");
 });
