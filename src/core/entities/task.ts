@@ -1,29 +1,46 @@
+import InvalidTask from "../../errs/invalidTask";
 import type { TaskDTO } from "../use-cases/create-task/taskDTO";
 
 export default class Task {
-  private name: string;
-  private startDate: Date;
-  private endTime: Date;
+  private _name: string;
+  private _startDate: Date;
+  private _endTime: Date;
 
   private constructor(name: string, startTime: Date, endTime: Date) {
-    this.name = name;
-    this.startDate = startTime;
-    this.endTime = endTime;
+    this._name = name;
+    this._startDate = startTime;
+    this._endTime = endTime;
   }
 
-  public static create(task: TaskDTO): Task | null {
-    this.checkStartTime(task.startDate, task.endTime) === true
-      ? new Task(task.name, task.startDate, task.endTime)
-      : null;
+  public static create({ name, startDate, endTime }: TaskDTO): Task {
+    if (!this.validName(name)) {
+      throw new InvalidTask("insert a valid name");
+    }
 
-    return null;
+    if (!this.checkStartTime(startDate, endTime)) {
+      throw new InvalidTask("insert a valid date");
+    }
+
+    return new Task(name, startDate, endTime);
   }
 
   private static checkStartTime(startTime: Date, endTime: Date): Boolean {
-    return startTime > endTime;
+    return startTime < endTime;
   }
 
-  //   isLeastThree(name: string) {
-  //     if(name.length < 3)
-  //   }
+  private static validName(name: string): Boolean {
+    return name.length > 3;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  get startDate(): Date {
+    return this._startDate;
+  }
+
+  get endTime(): Date {
+    return this._endTime;
+  }
 }
