@@ -36,5 +36,23 @@ describe("createTask", () => {
     expect(result).toStrictEqual(output);
   });
 
-  test.todo("should return a created task");
+  test("should return a created task", async () => {
+    const createTask = new CreateTask(new TaskRepositoryPostgres());
+
+    const input: TaskDTO = {
+      name: "Ler livro",
+      startDate: new Date("2025-08-07T00:42:58.972Z"),
+      endTime: new Date("2025-08-08T00:42:58.972Z"),
+    };
+
+    const output = {
+      name: "Ler livro",
+      startDate: new Date("2025-08-07T00:42:58.972Z"),
+      endTime: new Date("2025-08-08T00:42:58.972Z"),
+    };
+
+    const result = await createTask.execute(input);
+
+    expect(result).toStrictEqual(output);
+  });
 });
