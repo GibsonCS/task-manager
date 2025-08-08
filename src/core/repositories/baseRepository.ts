@@ -1,3 +1,3 @@
 export interface IBaseRepository<T> {
-  save(item: T): Promise<T | undefined>;
+	save(item: T): Promise<T | undefined>;
 }

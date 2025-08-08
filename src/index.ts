@@ -1,3 +1,3 @@
 export default function example() {
-  return "1";
+	return "1";
 }

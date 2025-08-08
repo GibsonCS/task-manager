@@ -1,5 +1,5 @@
 export interface TaskDTO {
-  name: string;
-  startDate: Date;
-  endTime: Date;
+	name: string;
+	startDate: Date;
+	endTime: Date;
 }
