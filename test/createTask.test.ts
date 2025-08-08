@@ -4,7 +4,7 @@ import TaskRepositoryPostgres from "../src/infrastructure/repository/taskReposit
 import type { TaskDTO } from "../src/core/use-cases/create-task/taskDTO";
 
 describe("createTask", () => {
-  test("Should return null if a task not was created", async () => {
+  test("Should return '{message: insert a valid date, success: false}' if the startDate is invalid ", async () => {
     const createTask = new CreateTask(new TaskRepositoryPostgres());
 
     const input: TaskDTO = {
@@ -13,7 +13,7 @@ describe("createTask", () => {
       endTime: new Date(),
     };
 
-    const output = null;
+    const output = { message: "insert a valid date", success: false };
 
     const result = await createTask.execute(input);
 
